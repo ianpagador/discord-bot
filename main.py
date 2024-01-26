@@ -193,27 +193,27 @@ async def on_message(msg):
     elif "COCONUT MALL" == msg.content:
         await msg.channel.send("https://www.youtube.com/watch?v=MoB8QTIvv8E")
         
-@bot.command(name='ian', help='that\'s me')
+@client.command(name='ian', help='that\'s me')
 async def ian():
     await msg.channel.send("what's up lol")
 
-@bot.command(name='ianMagic8Ball', help='test your luck')
+@client.command(name='ianMagic8Ball', help='test your luck')
 async def ianMagic8Ball():
     await msg.channel.send(random.choice(ballList))
 
-@bot.command(name='ianInspire', help='feeling down? let me help you')
+@client.command(name='ianInspire', help='feeling down? let me help you')
 async def ianInspire():
     quote = getQuote()
     await msg.channel.send(quote)
 
-@bot.command(name='ianJoke', help='feeling sad? let me cheer you up')
+@client.command(name='ianJoke', help='feeling sad? let me cheer you up')
 async def ianJoke():
     joke = getJoke()
     await msg.channel.send(joke.split("-")[0])
     time.sleep(2)
     await msg.channel.send(joke.split("-")[1])
 
-@bot.command(name='ianNameAge', help='i\'ll guess how old you are based on your name')
+@client.command(name='ianNameAge', help='i\'ll guess how old you are based on your name')
 async def ianNameAge():
     ms = msg.content
     name = ms[12:]
@@ -221,12 +221,12 @@ async def ianNameAge():
     age = getAge(name)
     await msg.channel.send(age)
   
-@bot.command(name='ianCat', help='i\'ll send a random cat to lighten the mood')
+@client.command(name='ianCat', help='i\'ll send a random cat to lighten the mood')
 async def ianCat():
     cat = randomCat()
     await msg.channel.send(cat)
 
-@bot.command(name='ianEncrypt', help='create a caesar cipher as follows: !ianEncrypt index message')
+@client.command(name='ianEncrypt', help='create a caesar cipher as follows: !ianEncrypt index message')
 async def ianEncrypt():
       ms = msg.content
       length = len("!ianEncrypt")
@@ -236,7 +236,7 @@ async def ianEncrypt():
       encryptAnswer = encrypt(numRoll, inputString)
       await msg.channel.send(encryptAnswer)
 
-@bot.command(name='ianDecrypt', help='decode a caesar cipher as follows: !ianDecrypt index message')
+@client.command(name='ianDecrypt', help='decode a caesar cipher as follows: !ianDecrypt index message')
 async def ianDecrypt():
       ms = msg.content
       length = len("!ianEncrypt")
